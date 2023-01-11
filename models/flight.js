@@ -10,3 +10,9 @@ const flightSchema = new Schema({
   departs: Date,
 
 })
+
+const Flight = mongoose.model('Flight', movieSchema)
+
+export {
+  Flight
+}
