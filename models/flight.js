@@ -4,12 +4,16 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const flightSchema = new Schema({
-  airline: String,
-  airport: String,
-  flightNo: Number,
-  departs: Date,
+  airline: { type: String, default: " " },
+  airport: { type: String, default: "DEN" },
+  flightNo: { type: Number, default: " " },
+  departs: {
+    type: Date,
+    required: true
+  }
 
 })
+
 
 const Flight = mongoose.model('Flight', flightSchema)
 
