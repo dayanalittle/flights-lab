@@ -16,3 +16,19 @@ const Flight = mongoose.model('Flight', flightSchema)
 export {
   Flight
 }
+
+
+// {
+//   type: String,
+//   enum: ["G", "PG", "PG-13", "R"]
+// }
+
+
+// {
+//   type: Number,
+//   default: function () {
+//     return new Date().getFullYear()
+//   },
+//   min: 10,
+//   max: 9999
+// }
