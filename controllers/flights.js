@@ -1,3 +1,5 @@
+import { Flight } from "../models/flight.js"
+
 
 
 
@@ -7,6 +9,19 @@ function newFlight(req, res) {
   })
 }
 
+function create(req, res) {
+  req.body.done = false
+  Flight.create(req.body)
+  .then(flight => {
+    res.redirect('/flights')
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/flights')
+  })
+}
+
 export {
-  newFlight as new
+  newFlight as new,
+  create,
 }
