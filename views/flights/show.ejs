@@ -27,6 +27,16 @@
           <button>Edit Flight</button>
         </a>
       </section>
+      </section>
+      <% // new markup below %>
+        <h2>Ticket</h2>
+        <form id="add-ticket-form" action="/flights/<%= flight._id %>/ticket" method="POST">
+          <label for="seat-input">Seat Number:</label>
+          <input name="text" id="seat" required pattern="[A-F][1-9]\d?" placeholder="A1-F9"></input>
+          <label for="rating-select">Price:</label>
+          <input type="price" id="price-input" name="price">
+          <button type="submit">Add Ticket</button>
+</form>
     </main>
 
     <%- include('../partials/footer') %>
