@@ -39,7 +39,8 @@ const flightSchema = new Schema({
     min: 2023
     
   },
-  tickets: [ticketSchema]
+  tickets: [ticketSchema],
+  menu: [{type: Schema.Types.ObjectId, ref: 'Meal'}]
 }, {
   timestamps: true
 })

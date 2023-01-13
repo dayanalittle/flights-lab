@@ -47,6 +47,24 @@
           <button>Edit Flight</button>
         </a>
       </section>
+      <div>Menu:</div>
+      <ul>
+        <% flight.menu.forEach(menuMeal => { %>
+          <li><%= menuMeal.name %></li>
+        <% }) %>
+      </ul>
+  </section>
+<form id="add-meal-to-menu" action="/flights/<%= flight._id %>/meals" method="POST">
+  <select name="mealId">
+    <% meals.forEach(meal => { %>
+      <option value="<%= meal._id %>"><%= meal.name %></option>
+    <% }) %>
+  </select>
+  <button type="submit">Add to Menu</button>
+</form>
+
+
+
       </section>
       <% // new markup below %>
         <h2>Ticket</h2>
