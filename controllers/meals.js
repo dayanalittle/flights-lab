@@ -14,6 +14,13 @@ function newMeal(req, res) {
   
 }
 
+function create(req, res) {
+  Meal.create(req.body)
+  .then(meal => { 
+  })
+}
+
 export {
   newMeal as new,
+  create,
 }
