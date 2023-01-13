@@ -23,6 +23,26 @@
         <div>
           <%= flight.departs %>
         </div>
+        <% if (flight.tickets.length) { %>
+          <table>
+            <thead>
+              <tr>
+                <th>Seat</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% flight.tickets.forEach(ticket => { %>
+                <tr>
+                  <td><%= ticket.seat %></td>
+                  <td><%= ticket.price %></td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        <% } else { %>
+          <h3>All Seats Available</h3>
+        <% } %>
         <a href="/flights/<%= flight._id %>/edit">
           <button>Edit Flight</button>
         </a>
@@ -30,11 +50,11 @@
       </section>
       <% // new markup below %>
         <h2>Ticket</h2>
-        <form id="add-ticket-form" action="/flights/<%= flight._id %>/ticket" method="POST">
+        <form id="add-ticket-form" action="/flights/<%= flight._id %>/tickets" method="POST">
           <label for="seat-input">Seat Number:</label>
-          <input name="text" id="seat" required pattern="[A-F][1-9]\d?" placeholder="A1-F9"></input>
-          <label for="rating-select">Price:</label>
-          <input type="price" id="price-input" name="price">
+          <input name="seat" required pattern="[A-F][1-9]\d?" placeholder="A1-F9">
+          <label for="price-input">Price:</label>
+          <input name="price" id="price-input">
           <button type="submit">Add Ticket</button>
 </form>
     </main>

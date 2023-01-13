@@ -10,9 +10,11 @@
       <form id="new-form" action="/flights" method="POST">
         <label for="airline-select">Airline:</label>
         <select name="airline" id="airline-select">
-          <option value="American">American</option>
-          <option value="Southwest">Southwest</option>
-          <option value="United">United</option>
+          <option value="American">American Airlines</option>
+          <option value="Southwest">Southwest Airlines</option>
+          <option value="Spirit">Spirit Airlines</option>
+          <option value="Alaska">Alaska Airlines</option>
+          <option value="United">United Airlines</option>
         </select>
         <label for="airport-select">Airport:</label>
         <select name="airport" id="airport-select">
@@ -20,12 +22,14 @@
           <option value="DEN">AUS</option>
           <option value="DFW">DFW</option>
           <option value="LAX">LAX</option>
+          <option value="CHI">CHI</option>
+          <option value="PHL">PHL</option>
           <option value="SAN">SAN</option>
         </select>
         <label for="flightNo-input">FlightNo:</label>
         <input type="number" name="flightNo" id="flightNo-input">
         <label for="departs-input">Departure:</label>
-        <input type="date" name="departs" id="departs-input">
+        <input type="datetime local" name="departs" id="departs-input">
         <button type="submit">Add Flight</button>
       </form>
     </main>
